@@ -1,0 +1,154 @@
+/* ==== Local Fonts ==== */
+
+/* Inter Regular (400) */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Medium (500) */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Bold (700) */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Sans JP Regular (400) */
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('/fonts/NotoSansJP-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Sans JP Bold (700) */
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('/fonts/NotoSansJP-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==== Global Variables ==== */
+:root {
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1e40af;
+  --ifm-color-primary-darker: #1e3a8a;
+  --ifm-color-primary-darkest: #172554;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+
+  --ifm-font-family-base: 'Inter', 'Noto Sans JP', sans-serif;
+  --ifm-heading-font-family: 'Inter', 'Noto Sans JP', sans-serif;
+
+  --shadow-soft: 0 8px 24px rgba(0,0,0,.06);
+}
+
+/* ==== Hero Section ==== */
+.hero {
+  background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+}
+[data-theme='dark'] .hero {
+  background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);
+}
+
+/* Hero タイトル（テーマ依存） */
+.hero__title {
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* ライトモード時 */
+[data-theme='light'] .hero__title {
+  color: #1e40af; /* 濃いブルー */
+}
+
+/* ダークモード時 */
+[data-theme='dark'] .hero__title {
+  color: #60a5fa; /* 明るめブルー */
+}
+
+/* サブタイトル */
+.hero__subtitle {
+  color: var(--ifm-font-color-base);
+  opacity: 0.95;
+}
+
+/* ==== Headings ==== */
+h1 { font-weight: 700; }
+h2 { font-weight: 700; font-size: 1.8rem; letter-spacing: .15px; }
+h3 { font-weight: 600; font-size: 1.25rem; letter-spacing: .15px; }
+
+/* ==== Links ==== */
+a:not(.button) {
+  text-underline-offset: 3px;
+}
+a:not(.button):hover {
+  text-decoration: underline;
+}
+
+/* ==== Layout ==== */
+.hero-compact { padding: 3rem 0; }
+.hero__inner { display:flex; align-items:center; justify-content:space-between; gap:2rem; }
+.hero__text { max-width: 780px; }
+.hero__image { display:flex; align-items:center; justify-content:center; }
+
+/* ==== Sections ==== */
+.section { padding: 3rem 0; }
+.section__title { font-size: 1.75rem; margin-bottom: 1rem; }
+.section__body { line-height: 1.85; font-size: 1.02rem; }
+
+/* ==== Skills ==== */
+.skill-list { columns: 2; column-gap: 2rem; padding-left: 1rem; }
+
+/* ==== Timeline ==== */
+.timeline { position: relative; margin-left: 1rem; }
+.timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:#e5e7eb; }
+.timeline__item { position:relative; padding-left: 2rem; margin: 1rem 0; }
+.timeline__dot { position:absolute; left:0; top:.6rem; width:14px; height:14px; background:var(--ifm-color-primary); border-radius:9999px; box-shadow: var(--shadow-soft); }
+.timeline__content h4 { margin:.25rem 0 .25rem; font-weight:600; }
+
+/* ==== Project Cards ==== */
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.card.project, .card {
+  border:1px solid #ececec;
+  border-radius: .9rem;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.card.project:hover, .card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+  border-color: #e5e7eb;
+}
+.tags { margin-top:.5rem; display:flex; flex-wrap:wrap; gap:.5rem; }
+.tag, .badge--primary {
+  font-size:.8rem;
+  padding:.2rem .6rem;
+  border-radius:9999px;
+}
+
+/* ==== Navbar ==== */
+.navbar__item { font-weight: 500; }
+
+/* ==== Responsive ==== */
+@media (max-width: 800px) {
+  .hero__inner { flex-direction: column; text-align:center; }
+  .skill-list { columns: 1; }
+}
