@@ -19,7 +19,7 @@ const projects: Project[] = [
         title: 'InnoReplacer',
         description: 'Inno Setupベースの置換・ビルド補助ツール。配布用インストーラの置換作業を効率化。',
         href: 'https://github.com/mono-tec/InnoReplacer',
-        tags: ['C#', 'Installer', 'InnoSetup'],
+        tags: ['C#', 'Installer'],
     },
     {
         title: 'pgbench-compare',
