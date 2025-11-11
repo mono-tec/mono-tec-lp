@@ -17,7 +17,11 @@ const config: Config = {
     trailingSlash: false, // 末尾スラッシュの揺れを抑止
 
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        },
+    },
 
     // 日本語のみ運用
     i18n: {
